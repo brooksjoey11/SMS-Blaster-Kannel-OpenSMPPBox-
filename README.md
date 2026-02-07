@@ -199,11 +199,11 @@ pkill -f smppbox && /usr/local/kannel/sbin/smppbox /etc/kannel.conf &
 
 🏷️ Version & Compatibility
 
-· Ubuntu: 22.04 LTS (recommended)
-· Kannel: Latest from GitHub (compiled)
-· OpenSMPPBox: Latest from louney/opensmppbox
-· PHP: 7.4+ with curl extension
-· SMPP: 3.4 protocol compatible
+· Ubuntu: 22.04 LTS (recommended)    
+· Kannel: Latest from GitHub (compiled)     
+· OpenSMPPBox: Latest from louney/opensmppbox      
+· PHP: 7.4+ with curl extension      
+· SMPP: 3.4 protocol compatible      
 
 📄 License
 
