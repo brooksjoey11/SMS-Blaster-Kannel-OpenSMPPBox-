@@ -36,7 +36,7 @@ Expected Output:
 SMS blasting system installed and running.
 ```
 
-⚙️ Configuration Matrix
+## ⚙️ Configuration Matrix
 
 1. Carrier Settings (/etc/kannel.conf)
 
@@ -72,7 +72,7 @@ sudo systemctl start smsblast.service   # Resume sending
 sudo systemctl restart smsblast.service # Reload configuration
 ```
 
-📊 Performance Profile
+### 📊 Performance Profile
 
 Metric Specification
 Throughput 500+ SMS/second (configurable)
@@ -82,7 +82,7 @@ Reconnect Delay 5 seconds (adjustable)
 Memory Footprint ~50MB per service
 Persistence Survives network interruptions
 
-🛠️ Architecture
+### 🛠️ Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -116,7 +116,7 @@ Persistence Survives network interruptions
 └─────────────────────────────────────────────────────────┘
 ```
 
-🔧 Troubleshooting Matrix
+### 🔧 Troubleshooting Matrix
 
 Symptom Diagnosis Resolution
 Kannel won't start Configuration syntax error tail -n 50 /var/log/kannel/kannel.log
@@ -125,7 +125,7 @@ PHP errors Missing dependencies or unreachable URL apt install php-curl && curl 
 Queue stuck SMPP connection down Check carrier status and credentials
 High memory Queue limit too high Reduce queue-limit in configuration
 
-📁 File Inventory
+### 📁 File Inventory
 
 ```
 /etc/kannel.conf                    # Main configuration
@@ -138,7 +138,7 @@ High memory Queue limit too high Reduce queue-limit in configuration
   └── smppbox.log                  # SMPP connection logs
 ```
 
-⚡ Optimization Checklist
+### ⚡ Optimization Checklist
 
 · Throughput: Set throughput = 500 in kannel.conf
 · Queue Size: Adjust queue-limit = 500000 based on RAM
@@ -147,7 +147,7 @@ High memory Queue limit too high Reduce queue-limit in configuration
 · Log Level: Set log-level = 1 for production (0=debug)
 · Carrier Limits: Align with provider's maximum submit rate
 
-⚠️ Compliance & Safety
+### ⚠️ Compliance & Safety
 
 Legal Requirements:
 
@@ -163,7 +163,7 @@ Operational Safeguards:
 · Implement daily send limits if required
 · Maintain audit logs for 90+ days
 
-📈 Monitoring Endpoints
+### 📈 Monitoring Endpoints
 
 ```bash
 # Real-time service status
@@ -179,7 +179,7 @@ ps aux | grep bearerbox | grep -o "queue=[0-9]*"
 netstat -tn | grep :2775 | wc -l
 ```
 
-🔄 Update & Maintenance
+### 🔄 Update & Maintenance
 
 ```bash
 # Update Kannel from source
@@ -197,7 +197,7 @@ make && make install
 pkill -f smppbox && /usr/local/kannel/sbin/smppbox /etc/kannel.conf &
 ```
 
-🏷️ Version & Compatibility
+### 🏷️ Version & Compatibility
 
 · Ubuntu: 22.04 LTS (recommended)    
 · Kannel: Latest from GitHub (compiled)     
