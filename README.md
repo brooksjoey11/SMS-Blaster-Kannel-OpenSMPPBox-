@@ -1,23 +1,20 @@
-SMS Blaster - Kannel and OpenSMPPBox
+# SMS Blaster - Kannel and OpenSMPPBox
 
-High-Throughput SMS Infrastructure for Ubuntu 22.04
-Carrier-Grade Messaging at 500+ SMS/Second
+**High-Throughput SMS Infrastructure for Ubuntu 22.04**  
+*Carrier-Grade Messaging at 500+ SMS/Second*
 
----
+## 🚀 **Features**
 
-🚀 Features
+| Feature | Description |
+|---------|-------------|
+| **Kannel + OpenSMPPBox** | Full SMPP stack with carrier-grade routing |
+| **500+ SMS/Second** | Optimized queue management and throughput |
+| **HTTP Number Ingestion** | Dynamic phone number loading from any HTTP endpoint |
+| **Systemd Integration** | Persistent service with auto-restart |
+| **Queue Resilience** | 500,000 message queue capacity with flow control |
+| **Zero Downtime** | Automatic reconnection and failover handling |
 
-Feature Description
-Kannel + OpenSMPPBox Full SMPP stack with carrier-grade routing
-500+ SMS/Second Optimized queue management and throughput
-HTTP Number Ingestion Dynamic phone number loading from any HTTP endpoint
-Systemd Integration Persistent service with auto-restart
-Queue Resilience 500,000 message queue capacity with flow control
-Zero Downtime Automatic reconnection and failover handling
-
----
-
-📦 Quick Start
+## 📦 **Quick Start**
 
 ```bash
 # Clone and deploy
@@ -38,8 +35,6 @@ Expected Output:
 ✓ Services started
 SMS blasting system installed and running.
 ```
-
----
 
 ⚙️ Configuration Matrix
 
@@ -77,8 +72,6 @@ sudo systemctl start smsblast.service   # Resume sending
 sudo systemctl restart smsblast.service # Reload configuration
 ```
 
----
-
 📊 Performance Profile
 
 Metric Specification
@@ -88,8 +81,6 @@ Concurrent Connections Dynamic SMPP binding
 Reconnect Delay 5 seconds (adjustable)
 Memory Footprint ~50MB per service
 Persistence Survives network interruptions
-
----
 
 🛠️ Architecture
 
@@ -125,8 +116,6 @@ Persistence Survives network interruptions
 └─────────────────────────────────────────────────────────┘
 ```
 
----
-
 🔧 Troubleshooting Matrix
 
 Symptom Diagnosis Resolution
@@ -135,8 +124,6 @@ Slow sending Throughput limit or carrier throttle Adjust throughput = in kannel.
 PHP errors Missing dependencies or unreachable URL apt install php-curl && curl -I YOUR_URL
 Queue stuck SMPP connection down Check carrier status and credentials
 High memory Queue limit too high Reduce queue-limit in configuration
-
----
 
 📁 File Inventory
 
@@ -151,8 +138,6 @@ High memory Queue limit too high Reduce queue-limit in configuration
   └── smppbox.log                  # SMPP connection logs
 ```
 
----
-
 ⚡ Optimization Checklist
 
 · Throughput: Set throughput = 500 in kannel.conf
@@ -161,8 +146,6 @@ High memory Queue limit too high Reduce queue-limit in configuration
 · PHP Rate: Modify $rate = 50 in loader.php for burst control
 · Log Level: Set log-level = 1 for production (0=debug)
 · Carrier Limits: Align with provider's maximum submit rate
-
----
 
 ⚠️ Compliance & Safety
 
@@ -180,8 +163,6 @@ Operational Safeguards:
 · Implement daily send limits if required
 · Maintain audit logs for 90+ days
 
----
-
 📈 Monitoring Endpoints
 
 ```bash
@@ -197,8 +178,6 @@ ps aux | grep bearerbox | grep -o "queue=[0-9]*"
 # Connection health
 netstat -tn | grep :2775 | wc -l
 ```
-
----
 
 🔄 Update & Maintenance
 
@@ -218,8 +197,6 @@ make && make install
 pkill -f smppbox && /usr/local/kannel/sbin/smppbox /etc/kannel.conf &
 ```
 
----
-
 🏷️ Version & Compatibility
 
 · Ubuntu: 22.04 LTS (recommended)
@@ -227,8 +204,6 @@ pkill -f smppbox && /usr/local/kannel/sbin/smppbox /etc/kannel.conf &
 · OpenSMPPBox: Latest from louney/opensmppbox
 · PHP: 7.4+ with curl extension
 · SMPP: 3.4 protocol compatible
-
----
 
 📄 License
 
@@ -242,6 +217,6 @@ Queue Capacity: 500,000 messages
 Failover: Automatic reconnection
 Monitoring: Full log aggregation
 
----
-
 Production Ready: This system is deployed, tested, and optimized for carrier-grade SMS operations. Replace placeholder credentials, validate carrier integration, and commence controlled deployment.
+
+```
