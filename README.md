@@ -14,7 +14,7 @@
 | **Queue Resilience** | 500,000 message queue capacity with flow control |
 | **Zero Downtime** | Automatic reconnection and failover handling |
 
-## 📦 **Quick Start**
+#### 📦 **Quick Start**
 
 ```bash
 # Clone and deploy
@@ -24,7 +24,7 @@ chmod +x install-smsblast.sh
 sudo ./install-smsblast.sh
 ```
 
-Expected Output:
+#### Expected Output:
 
 ```
 ✓ System updated
